@@ -1,30 +1,58 @@
 package com.maska.service;
 
+
 import com.maska.domain.entities.Member;
 import com.maska.repository.MemberRepository;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-
+import java.util.List;
+import java.util.Optional;
 
 @Service
+@Transactional
 public class MemberService {
-
     @Autowired
     private MemberRepository memberRepository;
 
-    @PostConstruct
-    public void insertStaticData() {
-        Member member1 = new Member();
-        member1.setId(1L);
-        member1.setName("John Doe");
 
-        Member member2 = new Member();
-        member2.setId(2L);
-        member2.setName("Jane Doe");
 
-        memberRepository.save(member1);
-        memberRepository.save(member2);
+
+    public Member createMember(Member member) {
+        return memberRepository.save(member);
+    }
+
+
+    public List<Member> getAllMembers() {
+        return memberRepository.findAll();
+    }
+
+
+    public Optional<Member> getMemberById(Long id) {
+        return memberRepository.findById(id);
+    }
+
+
+    public Member updateMember(Long id, Member updatedMember) {
+        return memberRepository.findById(id).map(member -> {
+            member.setPrenom(updatedMember.getPrenom());
+            member.setName(updatedMember.getName());
+            member.setNumeroAdhesion(updatedMember.getNumeroAdhesion());
+            member.setPieceIdentification(updatedMember.getPieceIdentification());
+            member.setNationalite(updatedMember.getNationalite());
+            member.setDateAdhesion(updatedMember.getDateAdhesion());
+            member.setDateExpiration(updatedMember.getDateExpiration());
+            return memberRepository.save(member);
+        }).orElseThrow(() -> new RuntimeException("Member not found with id: " + id));
+    }
+
+
+    public boolean deleteMember(Long id) {
+        return memberRepository.findById(id).map(member -> {
+            memberRepository.delete(member);
+            return true;
+        }).orElse(false);
     }
 }
