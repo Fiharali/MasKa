@@ -49,6 +49,11 @@ Spring Data JPA is a part of the larger Spring Data project, designed to simplif
 Spring MVC is a framework within the Spring Framework that provides a powerful way to build web applications in Java. It follows the MVC design pattern
 
 ### Installation and Setup
+  - Create a New Maven Project
+  - Add Spring Dependencies
+  - Create the web.xml File
+  - Create the Spring Configuration File
+
 
 
 
