@@ -19,7 +19,9 @@ such as creating, viewing, updating, and deleting users through a web interface.
 
 ### Project Structure
 
+
 ### Dependency Injection (DI)
+Dependency Injection used to manage dependencies between objects ,  instead of an object creating or managing its dependencies, those dependencies are "injected" or provided to it externally
 
 ### Inversion of Control (IoC)
 
