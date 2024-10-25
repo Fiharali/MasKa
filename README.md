@@ -43,8 +43,10 @@ ApplicationContext is the providing configuration information to the Spring IoC 
 Stereotype annotations are used to define the roles of beans. Some commonly used stereotype annotations include: @Component , @Service , @Repository , @Controller .
 
 ### Spring Data JPA
+Spring Data JPA is a part of the larger Spring Data project, designed to simplify data access in Spring applications by providing an abstraction layer over the Java Persistence API
 
 ### Spring MVC
+Spring MVC is a framework within the Spring Framework that provides a powerful way to build web applications in Java. It follows the MVC design pattern
 
 ### Installation and Setup
 
