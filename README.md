@@ -31,13 +31,16 @@ Inversion of Control  is a principle in software design that reverses the tradit
 
 ### Bean Scopes
 Singleton (default scope): Only one instance of the bean is created for the Spring container. <br>
-Prototype: A new instance of the bean is created each time it is requested from the Spring container.
-Request: A new instance is created for each HTTP request, available only in web applications.
-Session: A new instance is created for each HTTP session, specific to web applications.
+Prototype: A new instance of the bean is created each time it is requested from the Spring container. <br>
+Request: A new instance is created for each HTTP request, available only in web applications. <br>
+Session: A new instance is created for each HTTP session, specific to web applications. <br>
 
 ### ApplicationContext
+ApplicationContext is the providing configuration information to the Spring IoC container ,  It loads bean definitions, manages bean lifecycles, and injects dependencies automatically .
 
 ### Component Scanning and Stereotype Annotations
+ Component scanning is the process where Spring automatically detects classes annotated with certain stereotypes in specified packages and registers them as beans in the Spring container <br>
+Stereotype annotations are used to define the roles of beans. Some commonly used stereotype annotations include: @Component , @Service , @Repository , @Controller .
 
 ### Spring Data JPA
 
