@@ -30,7 +30,7 @@ Inversion of Control  is a principle in software design that reverses the tradit
  Bean is an object managed by the Spring IoC container Beans are created, configured, and managed by the container 
 
 ### Bean Scopes
-Singleton (default scope): Only one instance of the bean is created for the Spring container.
+Singleton (default scope): Only one instance of the bean is created for the Spring container. <br>
 Prototype: A new instance of the bean is created each time it is requested from the Spring container.
 Request: A new instance is created for each HTTP request, available only in web applications.
 Session: A new instance is created for each HTTP session, specific to web applications.
